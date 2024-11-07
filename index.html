@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de dados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+    <body>
+        
+        <h1>GERENCIADOR DE ALUNOS</h1>
+
+        <div class="content">
+            <form id="add-student-form">
+                <input type="text" name="nome" placeholder="Nome do aluno">
+                <input type="text" name="turma" placeholder="Turma">
+                <input type="text" name="cpf" placeholder="CPF">
+                <input type="text" name="rg" placeholder="RG">
+                <input type="text" name="telefone_aluno" placeholder="Telefone do aluno">
+                <input type="text" name="telefone_responsavel" placeholder="Telefone do responsável">
+                <input type="email" name="email" placeholder="Email">
+                <input type="date" name="data_nasc" placeholder="Data de nascimento">
+                <button>CADASTRAR</button>
+            </form>
+        </div>
+
+        <div class="delete">
+            <form id="delete-student-form">
+                <h2>EXCLUIR REGISTRO DE ALUNO</h2>
+                <input type="text" name="delete" placeholder="CÓDIGO DO ALUNO">
+                <button>EXCLUIR</button>
+            </form>
+        </div>
+
+        <div class="list-content">
+            <ul id="student-list"></ul>
+        </div>
+
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDXGPLHeuHm1qbykC5miSztfURWE1dkz8Y",
+            authDomain: "bd3-app-libri-gabriel.firebaseapp.com",
+            projectId: "bd3-app-libri-gabriel",
+            storageBucket: "bd3-app-libri-gabriel.appspot.com",
+            messagingSenderId: "634250991718",
+            appId: "1:634250991718:web:b6668d0ac459dbec7275a7",
+            measurementId: "G-8RDZ52G6CT"
+        };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            console.log(db);
+    </script>
+
+    <script src="app.js"></script>
+</html>
